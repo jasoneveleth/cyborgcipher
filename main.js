@@ -19,7 +19,7 @@ function yeet() {
             color_num = converted_list[j]
             color = color2hex[color_num[0]]
             num = color_num[1]
-            newhtml += "<span style=\"color: " + color + "\">" + num.toString() + "</span>,"
+            newhtml += "<span style=\"color: " + color + "\">" + num.toString() + "</span> "
         }
 
         newhtml += "</p>"
