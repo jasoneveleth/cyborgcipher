@@ -1,7 +1,7 @@
 const color2hex =  {
-    'b': '#20bdfc',
-    'g': '#6cd433',
-    'r': '#fc0d1b'
+    'b': '#1155cc',
+    'g': '#00b050',
+    'r': '#ff0000'
 }
 
 function yeet() {
@@ -19,7 +19,7 @@ function yeet() {
             color_num = converted_list[j]
             color = color2hex[color_num[0]]
             num = color_num[1]
-            newhtml += "<span style=\"color: " + color + "\">" + num.toString() + "</span>&nbsp;&nbsp;&nbsp;&nbsp;"
+            newhtml += "<span style=\"color: " + color + "\">" + num.toString() + "</span>|"
         }
 
         newhtml += "</p>"
