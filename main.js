@@ -7,7 +7,9 @@ const color2hex =  {
 document.querySelector('form').addEventListener('submit', (e) => {
     const formData = new FormData(e.target);
     const input = formData.get("cipher_input")
-    const list_of_words = input.split(" ")
+    // clean text
+    const cleaned = input.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+    const list_of_words = cleaned.split(" ")
 
     const output = document.getElementById('output')
     output.innerHTML = ""
