@@ -4,8 +4,9 @@ const color2hex =  {
     'r': '#ff0000'
 }
 
-function yeet() {
-    const input = prompt("Input text")
+document.querySelector('form').addEventListener('submit', (e) => {
+    const formData = new FormData(e.target);
+    const input = formData.get("cipher_input")
     const list_of_words = input.split(" ")
 
     const output = document.getElementById('output')
@@ -25,7 +26,7 @@ function yeet() {
         newhtml += "</p>"
         output.innerHTML += newhtml
     }
-}
+});
 
 function word2cipher(prefix, suffix, converted_list) {
     console.log("prefix: " + prefix + ", suffix: " + suffix)
