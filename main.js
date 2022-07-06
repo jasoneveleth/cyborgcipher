@@ -21,7 +21,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
             color_num = converted_list[j]
             color = color2hex[color_num[0]]
             num = color_num[1]
-            html_for_ele += "<td><span style=\"color: " + color + "\">" + num.toString() + "</span></td><td></td>"
+            html_for_ele += "<td><span style=\"color: " + color + "\">" + num.toString() + "</span></td><td><span style=\"color: #ffffff\">0</span></td>"
         }
 
         html_for_ele += "</tr>"
