@@ -10,3 +10,6 @@ html {
 button, input, #output {
     font-size: 2.4rem;
 }
+table, td {
+  border:1px solid black;
+}

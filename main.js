@@ -11,10 +11,9 @@ document.querySelector('form').addEventListener('submit', (e) => {
     const cleaned = input.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
     const list_of_words = cleaned.split(" ")
 
-    const output = document.getElementById('output')
-    output.innerHTML = ""
+    let newhtml = "<table>"
     for (let i = 0; i < list_of_words.length; i++) {
-        newhtml = "<p>"
+        html_for_ele = "<tr>"
         converted_list = []
         word2cipher(list_of_words[i], "", converted_list)
 
@@ -22,12 +21,16 @@ document.querySelector('form').addEventListener('submit', (e) => {
             color_num = converted_list[j]
             color = color2hex[color_num[0]]
             num = color_num[1]
-            newhtml += "<span style=\"color: " + color + "\">" + num.toString() + "</span>,,"
+            html_for_ele += "<td><span style=\"color: " + color + "\">" + num.toString() + "</span></td><td></td>"
         }
 
-        newhtml += "</p>"
-        output.innerHTML += newhtml
+        html_for_ele += "</tr>"
+        newhtml += html_for_ele
     }
+    newhtml += "</table>"
+
+    const output = document.getElementById('output')
+    output.innerHTML = newhtml
 });
 
 function word2cipher(prefix, suffix, converted_list) {
@@ -35,7 +38,6 @@ function word2cipher(prefix, suffix, converted_list) {
     if (prefix === "") {
         return
     } else if (prefix in cipher) {
-        console.log(converted_list)
         converted_list.push(cipher[prefix])
         console.log(converted_list)
         word2cipher(suffix, "", converted_list)
